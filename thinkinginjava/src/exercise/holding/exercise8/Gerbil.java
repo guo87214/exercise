@@ -24,6 +24,7 @@ public class Gerbil {
 		gb.add(gb1);
 		gb.add(gb2);
 		gb.add(gb3);
+		
 		/*
 		 * for(Gerbil g:gb) { g.hop(); }
 		 */
