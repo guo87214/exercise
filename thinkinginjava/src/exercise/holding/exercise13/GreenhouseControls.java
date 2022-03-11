@@ -1,8 +1,9 @@
 package exercise.holding.exercise13;
 
+
 import innerclasses.controller.Event;
 
-public class GreenhouseControls {
+public class GreenhouseControls  extends Controller {
 
 	  private boolean light = false;
 	  public class LightOn extends Event {

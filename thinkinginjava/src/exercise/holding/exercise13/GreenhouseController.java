@@ -1,7 +1,5 @@
 package exercise.holding.exercise13;
 
-import innerclasses.GreenhouseControls;
-
 import innerclasses.controller.Event;
 
 public class GreenhouseController {
