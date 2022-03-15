@@ -9,8 +9,9 @@ public class SetOfInteger {
 			Random rand=new Random(47);
 			Set<Integer> intest=new HashSet<Integer>();
 			for(int i=0;i<10000;i++) {
+				
 				intest.add(Integer.valueOf(rand.nextInt(30)));
 			}
-			System.out.println(intest.size());
+			System.out.println(intest);
 		}
 }
