@@ -18,6 +18,7 @@ public class MapTest {
 	    System.out.println(words);
 	    HashMap<String,Integer> map=new HashMap<String,Integer>();
 	    List<String>words1=new ArrayList<String>(new TextFile("SetOperations.java","\\W+"));
+	    Print.print(words1);
 	    List<String> words2=new ArrayList<String>();
 	    for(String s:words) {
 	    	int i=0;
