@@ -65,24 +65,47 @@ public class CollectionSequence implements Collection{
 	@Override
 	public Object[] toArray() {
 		// TODO Auto-generated method stub
-		return null;
+		/*
+		 * Object[] o; int i=0; Iterator it=iterator(); while(it.hasNext()) { i++; }
+		 * o=new Object[i]; int i1=0; it=iterator(); while(it.hasNext()) {
+		 * o[i1]=it.next(); i1++; }
+		 */
+		return pets;
 	}
 
 	@Override
 	public Object[] toArray(Object[] a) {
 		// TODO Auto-generated method stub
+		pets.
 		return null;
 	}
 
 	@Override
 	public boolean add(Object e) {
 		// TODO Auto-generated method stub
-		return false;
+		boolean b=true;
+		/* Pet e1=(Pet)e; */
+		
+		if(e.getClass().equals(Pet.class)) {
+			int l=pets.length;
+			Pet[] pets1=new Pet[l+1];
+			for(int i=0;i<pets.length;i++ ){
+				pets1[i]=pets[i];
+			}
+			pets1[l+1]=(Pet) e;
+			pets=pets1;
+			}else {
+						b=false;
+					}
+		return b;
 	}
 
 	@Override
 	public boolean remove(Object o) {
 		// TODO Auto-generated method stub
+		if(o.getClass().equals(Pet.class)) {
+			
+		}
 		return false;
 	}
 

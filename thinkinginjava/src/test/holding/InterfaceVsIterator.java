@@ -26,20 +26,28 @@ public class InterfaceVsIterator {
 		Print.print();
 	}
 	public static void main(String[] args) {
-		List<Pet> petList=Pets.arrayList(8);
-		Set<Pet> petSet=new HashSet<Pet>(petList);
-		Map<String,Pet> petMap=new LinkedHashMap<String,Pet>();
-		String[] names=("Ralph,Eric,Robin,Lacey,"+"Britney,Sam,Spot,Fluffy").split(",");
-		for(int i=0;i<names.length;i++) {
-			petMap.put(names[i], petList.get(i));
-		}
-		display(petList);
-		display(petSet);
-		display(petList.iterator());
-		display(petSet.iterator());
-		Print.print(petMap);
-		Print.print(petMap.keySet());
-		display(petMap.values());
-		display(petMap.values().iterator());
+		Integer i=0;
+		Object i1=i;
+		Integer i2=(Integer)i1;
+		Print.print(i2.getClass().equals(i));
+		/*
+		 * List<Pet> petList=Pets.arrayList(8); Set<Pet> petSet=new
+		 * HashSet<Pet>(petList); Map<String,Pet> petMap=new
+		 * LinkedHashMap<String,Pet>(); String[]
+		 * names=("Ralph,Eric,Robin,Lacey,"+"Britney,Sam,Spot,Fluffy").split(",");
+		 * for(int i=0;i<names.length;i++) { petMap.put(names[i], petList.get(i)); }
+		 * display(petList); display(petSet); display(petList.iterator());
+		 * display(petSet.iterator()); Print.print(petMap);
+		 * Print.print(petMap.keySet()); display(petMap.values());
+		 * display(petMap.values().iterator());
+		 */
+		/*
+		 * String s="1"; String q="2";
+		 * Print.print(s.getClass().equals(q.getClass())+"  "+String.class.equals(s.
+		 * getClass()));
+		 */
+		/*
+		 * int[] i=new int[0]; i[1]=5; i[7]=9; for(int a:i) { Print.print(a); }
+		 */
 	}
 }
