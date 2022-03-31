@@ -26,10 +26,23 @@ public class InterfaceVsIterator {
 		Print.print();
 	}
 	public static void main(String[] args) {
-		Integer i=0;
-		Object i1=i;
-		Integer i2=(Integer)i1;
-		Print.print(i2.getClass().equals(i));
+		String s1="a";
+		String s2="a";
+		Print.print(s1.equals(s2));//true
+		/*
+		 * Integer[] i=new Integer[2]; Integer i1=1; Integer i2=1;
+		 * Print.print(i1.equals(i2));//true
+		 */		/*
+		 * Stack[] s=new Stack[2]; Stack s1=new Stack(); Stack s2=new Stack();
+		 * Print.print(s1.equals(s2));//false
+		 */		/*
+		 * Integer[] i=new Integer[9]; i[0]=null; i[1]=1; for(Integer t:i) {
+		 * Print.print(t); }
+		 */
+		/*
+		 * Integer i=0; Object i1=i; Integer i2=(Integer)i1;
+		 * Print.print(i2.getClass().equals(i));
+		 */
 		/*
 		 * List<Pet> petList=Pets.arrayList(8); Set<Pet> petSet=new
 		 * HashSet<Pet>(petList); Map<String,Pet> petMap=new

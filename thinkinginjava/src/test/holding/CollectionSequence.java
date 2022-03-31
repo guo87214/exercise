@@ -76,7 +76,7 @@ public class CollectionSequence implements Collection{
 	@Override
 	public Object[] toArray(Object[] a) {
 		// TODO Auto-generated method stub
-		pets.
+		
 		return null;
 	}
 
@@ -103,22 +103,66 @@ public class CollectionSequence implements Collection{
 	@Override
 	public boolean remove(Object o) {
 		// TODO Auto-generated method stub
+		boolean b=true;
+		try {
 		if(o.getClass().equals(Pet.class)) {
-			
+			for(int i=0;i<pets.length;i++) {
+				if(pets[i].equals((Pet)o)){
+					pets[i]=null;
+					b=true;
+					break;
+				}else {
+					b=false;
+				}
+			}
+		}}catch(Exception e) {
+			b=false;
 		}
-		return false;
+		return b;
 	}
 
 	@Override
 	public boolean containsAll(Collection c) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean b=true;
+		try {
+		Pet[] pets1=(Pet[])c.toArray();
+		if(pets1.length<=pets.length) {
+		for(Pet p:pets1) {
+			for(Pet p1:pets) {
+				if(p.equals(p1)) {
+					b=true;
+					break;
+				}else {
+					b=false;
+				}
+			}
+			if(!b) {
+				break;
+			}
+		}
+		}else {
+			b=false;
+		}
+		}catch(Exception e) {
+			b=false;
+		}
+		return b;
 	}
 
 	@Override
 	public boolean addAll(Collection c) {
 		// TODO Auto-generated method stub
-		return false;
+		boolean f=true;
+		try {
+		Pet[] pets1=(Pet[])c.toArray();
+		int l=pets.length;
+		for(int i=0;i<pets1.length;i++) {
+			pets[l+i]=pets1[i];
+		}}catch(Exception e) {
+			f=false;
+		
+		}
+		return f;
 	}
 
 	@Override
@@ -149,26 +193,23 @@ public class CollectionSequence implements Collection{
 
 	@Override
 	public boolean retainAll(Collection c) {
-		// TODO Auto-generated method stub
-		boolean b=true;
-		Pet[] pets1=(Pet[])c.toArray();
-		if(pets1.length<=pets.length) {
-		for(Pet p:pets1) {
-			for(Pet p1:pets) {
-				if(p.equals(p1)) {
-					b=true;
-					break;
-				}else {
-					b=false;
-				}
-			}
-			if(!b) {
+boolean b=true;
+try {
+	Pet[]pets1=(Pet[])c.toArray();
+	for(Pet p:pets) {
+		for(Pet p1:pets1) {
+			if(p.equals(p1)) {
 				break;
+			}else {
+				p=null;
+				
 			}
 		}
-		}else {
-			b=false;
-		}
+	}
+	
+}catch(Exception e) {
+	b=false;
+}
 		return b;
 	}
 
