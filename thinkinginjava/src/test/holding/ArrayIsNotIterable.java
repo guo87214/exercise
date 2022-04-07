@@ -2,12 +2,18 @@ package test.holding;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import net.mindview.util.Print;
 
 public class ArrayIsNotIterable {
 	static<T>void test(Iterable<T> ib){
-		for(T t:) {
+		for(T t:ib) {
+			Print.print(t+" ");
+		}
+	}
+	static <T> void test(List<T> li) {
+		for(T t:li) {
 			Print.print(t+" ");
 		}
 	}
