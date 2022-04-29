@@ -8,7 +8,8 @@ public class DynamicFields  {
 	public DynamicFields(int initialSize) {
 		fields=new Object[initialSize][2];
 		for(int i=0;i<initialSize;i++) {
-			fields[i]=new Object[] {null,null};		}
+			fields[i]=new Object[] {null,null};		
+			}
 	}
 	public String toString() {
 		StringBuilder result=new StringBuilder();
@@ -31,10 +32,11 @@ public class DynamicFields  {
 	}
 	private int getFieldNumber(String id) throws NoSuchFieldException {
 		int fieldNum=hasField(id);
-		if(fieldNum==-1) {
-			throw new NoSuchFieldException();
-			
-		}
+		
+		  if(fieldNum==-1) { throw new NoSuchFieldException();
+		  
+		  }
+		 
 		return fieldNum;
 	}
 	private int makeField(String id) {
@@ -46,8 +48,11 @@ public class DynamicFields  {
 			}
 		}
 			Object[][] tmp=new Object[fields.length+1][2];
-			for(int i=fields.length;i<tmp.length;i++) {
-				tmp[i]=new Object[] {null,null};
+			for(int i=0;i<tmp.length;i++) {
+				if(i<tmp.length-1) {
+				tmp[i]=fields[i];
+				}else {
+				tmp[i]=new Object[] {null,null};}
 			}
 		fields=tmp;
 		return makeField(id);
