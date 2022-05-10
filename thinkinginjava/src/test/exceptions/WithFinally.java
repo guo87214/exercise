@@ -7,7 +7,7 @@ public class WithFinally {
 			try {
 				throw new RuntimeException();
 			}catch (Exception e) {
-				// TODO: handle exception
+				// TODO: handle exception//
 				System.out.println("RuntimeException()");
 			}
 			sw.on();
